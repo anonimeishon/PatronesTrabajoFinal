@@ -22,20 +22,23 @@ class Pregunta:
         
 class DB:
     __metaclass__= Singleton
-    def __init__(self, vec):
-        self.vec = vec
+    def __init__(self, lista):
+        self.vec = lista
         
-    def ide(self):
+    def ide(self,vec):
         print(id) 
+        print(vec)
 
-    def conv(self,vec):
-        vector=[]
-        for line in vec:
-            row = line.split(',')
-            print (row)
-            enunciado, A, B, C, D, correcta  = [i.strip() for i in row]
-            vector.append(Pregunta(enunciado,A,B,C,D,correcta))
-        return (vector)
+
+
+def conv(vec):
+    vector=[]
+    for line in vec:
+        row = line.split(',')
+        print (row)
+        enunciado, A, B, C, D, correcta  = [i.strip() for i in row]
+        vector.append(Pregunta(enunciado,A,B,C,D,correcta))
+    return (vector)
 
 
 def ftoq():
@@ -47,6 +50,9 @@ def ftoq():
 
 if __name__ == '__main__':
     ftoq()
+
+    conv(DB.vec)
+
 
 
 
