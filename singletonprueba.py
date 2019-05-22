@@ -44,14 +44,16 @@ def conv(vec):
 def ftoq():
     fh = open("preguntas.txt", "r")
     lines = fh.read().splitlines()
-    DB(lines)
     fh.close()
+    return lines
+
 
 
 if __name__ == '__main__':
-    ftoq()
-
-    conv(DB.vec)
+    lines=ftoq()
+    Database = DB(lines)
+    print(Database)
+    conv(Database.vec)
 
 
 
