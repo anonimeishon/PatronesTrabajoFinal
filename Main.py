@@ -24,8 +24,8 @@ def ftoq():
     return (vector)
 
 if __name__ == '__main__':
-    print(ftoq())
-
+    lpreg = ftoq()
+    print (lpreg[0].A)
 
     
 
