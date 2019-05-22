@@ -6,6 +6,9 @@ class Pregunta:
         self.C = C
         self.D = D
         self.correcta = correcta
+    
+    def verificar(self, whatever):
+        pass
 
 
 
@@ -19,5 +22,6 @@ for line in lines:
     print (row)
     enunciado, A, B, C, D, correcta  = [i.strip() for i in row]
     vector.append(Pregunta(enunciado,A,B,C,D,correcta))
-     
+    
 fh.close()
+
