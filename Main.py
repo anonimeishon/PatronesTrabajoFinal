@@ -11,17 +11,22 @@ class Pregunta:
         pass
 
 
-
-if __name__ == '__main__':
+def ftoq():
+    vector = []
     fh = open("preguntas.txt", "r")
     lines = fh.read().splitlines()
-    vector = []
+    for line in lines:
+        row = line.split(',')
+        print (row)
+        enunciado, A, B, C, D, correcta  = [i.strip() for i in row]
+        vector.append(Pregunta(enunciado,A,B,C,D,correcta))
+    fh.close()
+    return (vector)
 
-for line in lines:
-    row = line.split(',')
-    print (row)
-    enunciado, A, B, C, D, correcta  = [i.strip() for i in row]
-    vector.append(Pregunta(enunciado,A,B,C,D,correcta))
+if __name__ == '__main__':
+    print(ftoq())
+
+
     
-fh.close()
+
 
