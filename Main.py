@@ -10,11 +10,14 @@ class Pregunta:
 
 
 if __name__ == '__main__':
-    fh = open("preguntas.txt", "r").readlines()
+    fh = open("preguntas.txt", "r")
+    lines = fh.read().splitlines()
     vector = []
 
-for line in fh:
+for line in lines:
     row = line.split(',')
     print (row)
     enunciado, A, B, C, D, correcta  = [i.strip() for i in row]
     vector.append(Pregunta(enunciado,A,B,C,D,correcta))
+     
+fh.close()
