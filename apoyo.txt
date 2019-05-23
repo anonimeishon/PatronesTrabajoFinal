@@ -1,0 +1,2 @@
+https://stackoverflow.com/questions/41977170/python-multiprocessing-and-text-file-processing
+https://stackoverflow.com/questions/6976372/mulitprocess-pools-with-different-functions
