@@ -1,3 +1,4 @@
+#Clase Singleton
 class Singleton(type):
     _instances = {}
     def __call__(cls, *args, **kwargs):
@@ -5,9 +6,7 @@ class Singleton(type):
             cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
         return cls._instances[cls]
 
-
-
-
+#Clase para guardar preguntas individuales por medio de la funcion conv
 class Pregunta:
     def __init__(self, enunciado, A, B, C, D, correcta):
         self.enunciado = enunciado
@@ -20,21 +19,21 @@ class Pregunta:
     def verificar(self, whatever):
         pass
         
-class DB(metaclass = Singleton):
+#Clase para guardar preguntas leidas de archivo.txt (Usa patron singleton)
+class DB(metaclass = Singleton): 
     def __init__(self, lista):
         self.vec = lista
 
-
+#Convierte preguntas en una lista a preguntas individuales (1 objeto por pregunta)
 def conv(vec):
     vector=[]
     for line in vec:
         row = line.split(',')
-        print (row)
         enunciado, A, B, C, D, correcta  = [i.strip() for i in row]
         vector.append(Pregunta(enunciado,A,B,C,D,correcta))
     return (vector)
 
-
+#Lee un archivo txt y lo copia a uns lista
 def ftoq():
     fh = open("preguntas.txt", "r")
     lines = fh.read().splitlines()
@@ -42,12 +41,18 @@ def ftoq():
     return lines
 
 
-
+def play(preguntas):
+    '''
+    Q = 5
+    show question object
+    input answer
+    verify if T or F
+    next question
+    Q-1
+    '''
+    pass
 if __name__ == '__main__':
     lines=ftoq()
     Database = DB(lines)
-    Database2 = DB(lines)
-    assert Database is Database2
-    print(Database)
-    print(Database2)
-    conv(Database.vec)
+    preguntas = conv(Database.vec)
+
