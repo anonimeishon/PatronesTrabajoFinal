@@ -21,6 +21,7 @@ class MyWidget(QtWidgets.QWidget):
 
 
     def magic(self):
+        
         self.text.setText("asdasd")
 
 

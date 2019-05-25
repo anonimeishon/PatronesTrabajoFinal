@@ -1,4 +1,4 @@
-import Main
+import logic
 from PyQt5 import QtCore, QtWidgets, QtGui 
 
                                                                                                                                                                                                                                     
@@ -71,5 +71,5 @@ if __name__ == '__main__':
     score = 0
     app = QtWidgets.QApplication([])
     app.setStyle('Fusion')
-    preguntas = Main.maingui()
+    preguntas = logic.maingui()
     questionwindow(app, preguntas)
