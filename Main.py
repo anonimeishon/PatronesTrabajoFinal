@@ -51,8 +51,16 @@ def play(preguntas):
     Q-1
     '''
     pass
+
+def maingui():
+    lines=ftoq()
+    Database = DB(lines)
+    preguntas = conv(Database.vec)
+    return preguntas
+
 if __name__ == '__main__':
     lines=ftoq()
     Database = DB(lines)
     preguntas = conv(Database.vec)
+    print (preguntas)
 
