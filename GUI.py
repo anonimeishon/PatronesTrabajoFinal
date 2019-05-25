@@ -5,4 +5,3 @@ label = QLabel('Hello World!')
 label.show()
 app.exec_()
 
-i like bread
