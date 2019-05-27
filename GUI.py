@@ -49,7 +49,7 @@ def questionwindow(app, preguntas):
     alert= QtWidgets.QMessageBox()
     alert.setFont(f) 
     alert.setWindowTitle("Score: ")
-    alert.setText(sc)
+    alert.setText("Score: " + sc)
     alert.exec_()
 
 
